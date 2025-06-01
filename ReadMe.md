@@ -13,7 +13,9 @@
 - Record (rows), is each individual entry that exists in a table
 
 - field (column), is a column in a table that is designed to maintain specific information about every record in the table
-  <code>CREATE TABLE Persons (
+  <code>
+
+  CREATE TABLE Persons (
 
   ID int NOT NULL,
 
@@ -25,7 +27,9 @@
 
   PRIMARY KEY (ID)
 
-  );</code>
+  );
+
+  </code>
 
 ### 2. Foreign Key
 
@@ -51,7 +55,8 @@ Orders Table
 ### 3. Not null
 
 - Ensures a column cannot have a null value. It enforces a field to always have a value
-  <code>CREATE TABLE Persons (
+  <code>
+  CREATE TABLE Persons (
 
       ID int NOT NULL,
 
@@ -60,8 +65,9 @@ Orders Table
       FirstName varchar(255) NOT NULL,
 
       Age int
+        );
 
-);</code>
+</code>
 
 ### 4. Unique Constraint
 
@@ -72,13 +78,21 @@ A <code> PRIMARY KEY</code> constraint automatically has a UNIQUE constraint.
 However, you can have many <code> UNIQUE</code> constraints per table, but only one <code>PRIMARY KEY</code> constraint per table.
 
 <code>
+
 CREATE TABLE Persons (
-    ID int NOT NULL,
+ID int NOT NULL,
+
     LastName varchar(255) NOT NULL,
+
     FirstName varchar(255),
+
     Age int,
+
     UNIQUE (ID)
-);</code>
+
+);
+
+</code>
 
 ### 5. Check Contraints
 
@@ -87,7 +101,8 @@ Ensures all values in a column satisfy certain conditions
 The following SQL creates a CHECK constraint on the "Age" column when the "Persons" table is created. the check ensures the age is above or equal to 18.
 
 <code>
-CREATE TABLE Persons (
+
+    CREATE TABLE Persons (
 
     ID int NOT NULL,
 
@@ -97,14 +112,18 @@ CREATE TABLE Persons (
 
     Age int CHECK (Age>=18)
 
-);</code>
+);
+
+</code>
 
 ### 6. Default Constraint
 
 Used to insert a default value in a column if not specified
 
 The following SQL sets a DEFAULT value for the "City" column when the "Persons" table is created:
-<code>CREATE TABLE Persons (
+<code>
+
+    CREATE TABLE Persons (
 
     ID int NOT NULL,
 
@@ -116,7 +135,9 @@ The following SQL sets a DEFAULT value for the "City" column when the "Persons" 
 
     City varchar(255) DEFAULT 'Sandnes'
 
-);</code>
+);
+
+</code>
 
 ### 7. Index Constraint
 
@@ -124,7 +145,9 @@ Makes creating and retrieving data to be fast
 
 Creates an index on a table. Duplicate values are allowed:
 <code>
+
 CREATE INDEX index_name
 
 ON table_name (column1, column2, ...);
+
 </code>

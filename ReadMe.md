@@ -56,6 +56,24 @@ CREATE TABLE table_name (
 );
 ```
 
+# Inserting Data Into tables
+
+To insert data into a table, the command **INSERT INTO** statement. 
+
+**Syntax**
+```sql
+INSERT INTO cars (brand, model, year)
+VALUES ('Ford', 'Mustang', 1964);
+```
+We can also add multiple columns and values at once
+
+```sql
+INSERT INTO cars (brand, model, year)
+VALUES
+  ('Volvo', 'p1800', 1968),
+  ('BMW', 'M1', 1978),
+  ('Toyota', 'Celica', 1975);
+```
 
 # Altering Table
 
@@ -102,4 +120,4 @@ The <b>``` DROP TABLE```</b> statement is used to drop an existing table in a da
 
 
 
-
+ 

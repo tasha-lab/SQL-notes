@@ -120,7 +120,7 @@ To change data type of a column in a table.
 
 ```sql
     ALTER TABLE table_name
-    ALTER COLUMN column_name datatype
+    ALTER COLUMN column_name TYPE INTEGER USING column_name::INTEGER;
 ```
 
 # Droping Table

@@ -69,6 +69,14 @@ To add a column in a table, use the following syntax;
     ALTER TABLE table_name
     ADD column_name datatype;
 ```
+### ADD Multiple Columns
+
+To add multiple columns into a table, use the following syntax.
+```sql
+    ALTER TABLE table_name
+    ADD column_name datatype,
+    Add column_name datatype;
+```
 
 ## Drop Column
 
@@ -100,6 +108,12 @@ To change data type of a column in a table.
 # Droping Table
 The <b>``` DROP TABLE```</b> statement is used to drop an existing table in a database.
 
+**Example**
+Delete cars table:
+
+```
+    DROPTABLE cars;
+```
 
 
 

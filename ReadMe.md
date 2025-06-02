@@ -130,7 +130,7 @@ The <b>``` DROP TABLE```</b> statement is used to drop an existing table in a da
 Delete cars table:
 
 ```
-    DROPTABLE cars;
+    DROP TABLE cars;
 ```
 
 

@@ -1,151 +1,57 @@
-# SQL
+# Data Types in PostgreSQL
 
-## Constraints
+## Numeric
 
-- Constraints are rules enforced on data data columns on tables. They are used to limit the type of data that can go into a table
+Used to store numbers, whether whole or decimal. Examples:
 
-## Examples of Constraints
+- `integer`
+- `smallint` – Small range integer
+- `bigint` – Big range integer
+- `decimal(p,s)` – Exact numeric with precision and scale
+- `real` – Approximate floating-point number
+- `serial` – Auto-increment integer
 
-### 1. Primary Key
+## Character Types (String)
 
-- Uniquely identifies each record in a table.
+Used to store text data. Examples:
 
-- Record (rows), is each individual entry that exists in a table
+- `char(n)` – Fixed-length string, stores exactly n characters
+- `varchar(n)` – Variable-length string with limit n
+- `text` – No size limit
 
-- field (column), is a column in a table that is designed to maintain specific information about every record in the table
-  <code>
+## Date & Time
 
-  CREATE TABLE Persons (
+Store dates, times, or both. Examples:
 
-  ID int NOT NULL,
+- `date` – Stores date
+- `time` – Stores time
+- `timestamp` – Stores both date and time
+- `interval` – Stores a span of time
 
-  LastName varchar(255) NOT NULL,
+## Boolean
 
-  FirstName varchar(255),
+Stores logic true or false.
 
-  Age int,
+- `boolean` – true or false
 
-  PRIMARY KEY (ID)
+## Monetary
 
-  );
+Store money values.
 
-  </code>
+- `money` – Currency type with locale formatting
+- `numeric(p,s)` – For example, `(10, 2)` means total 10 digits with 2 decimal places
 
-### 2. Foreign Key
+---
 
-A foreign key in one table points to a primary key in another table.
+# Creating Tables without Constraints
 
-The table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent table.
+To create a new table, use `CREATE TABLE`.
 
-Persons Table
-|PersonID | LastName| FirstName |Age|
-|---------|---------|--------------|---|
-|1| Hansen| Ola |30|
-|2| Svendson| Tova |23|
-|3| Pettersen| Kari |20|
+**Syntax:**
 
-Orders Table
-|OrderID |OrderNumber|PersonID|
-|------------|------------|---------|
-|1 | 77895 |3|
-|2 | 44678 |3|
-|3 | 22456 |2|
-|4 | 24562 |1|
-
-### 3. Not null
-
-- Ensures a column cannot have a null value. It enforces a field to always have a value
-  <code>
-  CREATE TABLE Persons (
-
-      ID int NOT NULL,
-
-      LastName varchar(255) NOT NULL,
-
-      FirstName varchar(255) NOT NULL,
-
-      Age int
-        );
-
-</code>
-
-### 4. Unique Constraint
-
-Unique constraint ensures all values in a column are different
-
-A <code> PRIMARY KEY</code> constraint automatically has a UNIQUE constraint.
-
-However, you can have many <code> UNIQUE</code> constraints per table, but only one <code>PRIMARY KEY</code> constraint per table.
-
-<code>
-
-CREATE TABLE Persons (
-ID int NOT NULL,
-
-    LastName varchar(255) NOT NULL,
-
-    FirstName varchar(255),
-
-    Age int,
-
-    UNIQUE (ID)
-
+```sql
+CREATE TABLE table_name (
+    column_name datatype,
+    column_name datatype
 );
-
-</code>
-
-### 5. Check Contraints
-
-Ensures all values in a column satisfy certain conditions
-
-The following SQL creates a CHECK constraint on the "Age" column when the "Persons" table is created. the check ensures the age is above or equal to 18.
-
-<code>
-
-    CREATE TABLE Persons (
-
-    ID int NOT NULL,
-
-    LastName varchar(255) NOT NULL,
-
-    FirstName varchar(255),
-
-    Age int CHECK (Age>=18)
-
-);
-
-</code>
-
-### 6. Default Constraint
-
-Used to insert a default value in a column if not specified
-
-The following SQL sets a DEFAULT value for the "City" column when the "Persons" table is created:
-<code>
-
-    CREATE TABLE Persons (
-
-    ID int NOT NULL,
-
-    LastName varchar(255) NOT NULL,
-
-    FirstName varchar(255),
-
-    Age int,
-
-    City varchar(255) DEFAULT 'Sandnes'
-
-);
-
-</code>
-
-### 7. Index Constraint
-
-Makes creating and retrieving data to be fast
-
-Creates an index on a table. Duplicate values are allowed:
-<code>
-
-CREATE INDEX index_name
-
-ON table_name (column1, column2, ...);
+```

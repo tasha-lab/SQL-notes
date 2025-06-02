@@ -55,3 +55,47 @@ CREATE TABLE table_name (
     column_name datatype
 );
 ```
+
+
+# Altering Table
+
+ The ```ALTER TABLE ``` statement is used to add, delete, or modifiy column in an existing table. This includes droping constraints on an existing table.
+
+## ADD Column
+
+To add a column in a table, use the following syntax;
+
+```sql
+    ALTER TABLE table_name
+    ADD column_name datatype;
+```
+
+## Drop Column
+
+Deleting a column in a table.
+
+```sql
+    ALTER TABLE table_name
+    DROP COLUMN column_name;
+```
+
+## Rename Column
+
+Renaming a column in a table we use <b>``` RENAME  TO```</b> keyword.
+
+```sql
+    ALTER TABLE table_name
+    RENAME COLUMN old_name to new_name;
+```
+
+## Alter/Modify Datatype
+
+To change data type of a column in a table.
+
+```sql
+    ALTER TABLE table_name
+    ALTER COLUMN column_name datatype
+```
+
+
+

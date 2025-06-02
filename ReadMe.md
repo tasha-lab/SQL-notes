@@ -4,7 +4,7 @@
 
 Used to store numbers, whether whole or decimal. Examples:
 
-- `integer`
+- `integer` -a whole number
 - `smallint` – Small range integer
 - `bigint` – Big range integer
 - `decimal(p,s)` – Exact numeric with precision and scale
@@ -39,7 +39,7 @@ Stores logic true or false.
 Store money values.
 
 - `money` – Currency type with locale formatting
-- `numeric(p,s)` – For example, `(10, 2)` means total 10 digits with 2 decimal places
+- `numeric(p,s)` – eg, `(10, 2)` for 10 total digits with 2 decimal places
 
 ---
 

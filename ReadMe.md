@@ -56,6 +56,7 @@ CREATE TABLE table_name (
 );
 ```
 
+
 ---
 
 # Table constraints

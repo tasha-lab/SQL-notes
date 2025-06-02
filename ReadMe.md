@@ -72,7 +72,7 @@ To add a column in a table, use the following syntax;
 
 ## Drop Column
 
-Deleting a column in a table.
+Deleting a column in a table we use <b>```DROP COLUMN ``` </b> KEYWORD.
 
 ```sql
     ALTER TABLE table_name
@@ -96,6 +96,10 @@ To change data type of a column in a table.
     ALTER TABLE table_name
     ALTER COLUMN column_name datatype
 ```
+
+# Droping Table
+The <b>``` DROP TABLE```</b> statement is used to drop an existing table in a database.
+
 
 
 

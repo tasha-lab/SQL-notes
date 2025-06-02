@@ -55,3 +55,22 @@ CREATE TABLE table_name (
     column_name datatype
 );
 ```
+# Inserting Data Into tables
+
+To insert data into a table, the command **INSERT INTO** statement. 
+
+**Syntax**
+```sql
+INSERT INTO cars (brand, model, year)
+VALUES ('Ford', 'Mustang', 1964);
+```
+We can also add multiple columns and values at once
+
+```sql
+INSERT INTO cars (brand, model, year)
+VALUES
+  ('Volvo', 'p1800', 1968),
+  ('BMW', 'M1', 1978),
+  ('Toyota', 'Celica', 1975);
+```
+ 

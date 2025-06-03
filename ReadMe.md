@@ -57,8 +57,16 @@ CREATE TABLE table_name (
 ```
 
 
+# Inserting Data Into tables
 ---
 
+```sql
+INSERT INTO cars (brand, model, year)
+VALUES
+  ('Volvo', 'p1800', 1968),
+  ('BMW', 'M1', 1978),
+  ('Toyota', 'Celica', 1975);
+```
 # Table constraints
 
 1.  What are constraints and examples of constrains
@@ -157,3 +165,63 @@ CREATE TABLE table_name (
               ON DELETE CASCADE -- If a category is deleted, related books are also deleted
           );
        ```
+       
+# Altering Table
+
+ The ```ALTER TABLE ``` statement is used to add, delete, or modifiy column in an existing table. This includes droping constraints on an existing table.
+
+## ADD Column
+
+To add a column in a table, use the following syntax;
+
+```sql
+    ALTER TABLE table_name
+    ADD column_name datatype;
+```
+### ADD Multiple Columns
+
+To add multiple columns into a table, use the following syntax.
+```sql
+    ALTER TABLE table_name
+    ADD column_name datatype,
+    Add column_name datatype;
+```
+
+## Drop Column
+
+Deleting a column in a table we use <b>```DROP COLUMN ``` </b> KEYWORD.
+
+```sql
+    ALTER TABLE table_name
+    DROP COLUMN column_name;
+```
+
+## Rename Column
+
+Renaming a column in a table we use <b>``` RENAME  TO```</b> keyword.
+
+```sql
+    ALTER TABLE table_name
+    RENAME COLUMN old_name to new_name;
+```
+
+## Alter/Modify Datatype
+
+To change data type of a column in a table.
+
+```sql
+    ALTER TABLE table_name
+    ALTER COLUMN column_name TYPE INTEGER USING column_name::INTEGER;
+```
+
+# Droping Table
+The <b>``` DROP TABLE```</b> statement is used to drop an existing table in a database.
+
+**Example**
+Delete cars table:
+
+```
+    DROP TABLE cars;
+```
+
+

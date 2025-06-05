@@ -196,6 +196,13 @@ Deleting a column in a table we use <b>```DROP COLUMN ``` </b> KEYWORD.
     ALTER TABLE table_name
     DROP COLUMN column_name;
 ```
+## Rename table
+
+To rename a table use the key word  <b> ALTER TABLE </b>
+```sql
+    ALTER TABLE table_name
+    RENAME TO  new_name;
+```
 
 ## Rename Column
 
@@ -212,7 +219,24 @@ To change data type of a column in a table.
 
 ```sql
     ALTER TABLE table_name
-    ALTER COLUMN column_name TYPE INTEGER USING column_name::INTEGER;
+    ALTER COLUMN column_name TYPE  INTEGER;
+```
+## Add constraint
+To add a constraint to a table use the following syntax.
+
+```sql
+    alter table table_name
+    add constraint name_to_key primary key (column_name);
+```
+
+## Adding foreign key
+Foreign key to enable relationships between tables. Use the following syntax.
+
+```sql
+    alter table student 
+    add constraint email_fk 
+    foreign key (currentemail)
+    references  department(department);
 ```
 
 # Droping Table

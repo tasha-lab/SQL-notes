@@ -226,6 +226,16 @@ To add a constraint to a table use the following syntax.
 ```sql
     alter table table_name
     add constraint name_to_key primary key (column_name);
+```
+## Adding foreign key
+Foreign key to enable relationships between tables. Use the following syntax.
+
+```sql
+    alter table student 
+    add constraint email_fk 
+    foreign key (currentemail)
+    references  department(department);
+```
 
 # Droping Table
 The <b>``` DROP TABLE```</b> statement is used to drop an existing table in a database.

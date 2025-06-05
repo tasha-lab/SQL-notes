@@ -227,6 +227,7 @@ To add a constraint to a table use the following syntax.
     alter table table_name
     add constraint name_to_key primary key (column_name);
 ```
+
 ## Adding foreign key
 Foreign key to enable relationships between tables. Use the following syntax.
 
